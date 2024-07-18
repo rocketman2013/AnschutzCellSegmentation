@@ -5,9 +5,12 @@ This app takes in three channel flourescent images, where each channel shows the
 
 This is done by overlapping the model output masks of eack marker channel with the output mask of the electropolated channel, and dividing the number of overlapping cells by the total number of electropolated cells.
 
+
 <ins>Image Viewer GUI:</ins>
+
 <img width="511" alt="Screenshot 2024-07-18 at 4 36 43 PM" src="https://github.com/user-attachments/assets/9df11d9b-764d-4e81-b9b5-d090204f6741">
 
 
 <ins>Image Analysis GUI:</ins>
+
 <img width="763" alt="Screenshot 2024-07-18 at 4 37 45 PM" src="https://github.com/user-attachments/assets/f8459f68-2a18-47b1-8c74-1190bf11cdff">
