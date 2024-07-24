@@ -1,9 +1,10 @@
 # Cell Segmentation App
 Authors & Contributors: Henry Lewinsohn
+
 StarDist Model Page: https://github.com/stardist/stardist
 
 ## Overview
-<ins>View and analyze medical images with pathology specific deep learning models</ins>
+<ins>View and analyze medical images with pathology-specific deep learning models</ins>
 
 This project provides functionality for an image viewer and image analysis window to visualize and analyze the predictions of deep learning models on multi-channel microscopy images. Feel free to customize this code to support your specific needs, whether that be a different analysis method for your research, or adding a new type of model to app.
 
