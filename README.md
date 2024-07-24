@@ -1,5 +1,6 @@
 # Cell Segmentation App
 Authors & Contributors: Henry Lewinsohn
+StarDist Model Page: https://github.com/stardist/stardist
 
 ## Overview
 <ins>View and analyze medical images with pathology specific deep learning models</ins>
