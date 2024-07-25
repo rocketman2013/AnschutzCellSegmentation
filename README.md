@@ -18,14 +18,14 @@ This project provides the framework for an image viewer and image analysis windo
 
 
 <ins>Currently supported functionality:</ins>
-  - Train a custom segmentation model with your own images and ground truths (StarDist Model)
   - View and save your models predictions for multi-channel images
+  - Adjustable alpha widget in the image viewer (adjust the opacity of the models prediction)
   - Total cell count in an image/channel
   - Analysis of co-localized cells in multi-channel images
 
 <ins>ToDo:</ins>
+  - Impliment the "train a model" functionality for StarDist model (with your own images and ground truths)
   - ROI selection box for loaded images (send the selected region throught the specified model instead of the whole image)
-  - Adjustable alpha widget in the image viewer (adjust the opacity of the models prediction)
   - Option to view the outline of cell predictions in order to better determine models performance for densely packed cells
 
 
