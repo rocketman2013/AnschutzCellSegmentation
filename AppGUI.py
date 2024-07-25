@@ -295,6 +295,17 @@ class SegmentAppGUI:
         self.canvas = tk.Canvas(image_frame, width=display_size[0], height=display_size[1])
         self.canvas.grid(row=1, column=0, sticky="nsew")
 
+        # Slider for alpha value adjustment
+        self.alpha_slider = ttk.Scale(image_frame, 
+                                      from_ = 0,
+                                      to_ = 1,
+                                      command= self.get_alpha,
+                                      orient = 'vertical'
+                                      )
+        self.alpha_slider.grid(row=1, column=1, sticky='ns')
+        self.alpha_slider.set(0.7)
+        self.alpha_slider.bind("<ButtonRelease-1>", lambda event: self.get_alpha)
+
         # Force the canvas to update its size before displaying the image
         new_window.update_idletasks()
 
@@ -349,8 +360,6 @@ class SegmentAppGUI:
         grayscale_image = np.stack([grayscale_image] * 3, axis=-1)
 
         # Combine original image and selected segmented channels
-        alpha = 0.7
-
         background_image = grayscale_image.copy()
 
         # Performig bitwise operation if there are multiple labels to show the overlap
@@ -366,7 +375,7 @@ class SegmentAppGUI:
                 if num_channels_selected > 1:
                     initial_overlap = (segmented_channel[:,:,i] > 0) & (initial_overlap > 0)
 
-                background_image = background_image + (alpha * segmented_channel)
+                background_image = background_image + (self.alpha * segmented_channel)
         
         if num_channels_selected > 1:
             # Creating a gold three channel image of the overlaps
@@ -398,6 +407,15 @@ class SegmentAppGUI:
 
 
     ## HELPER FUNCTIONS FOR IMAGE VIEWER---------
+    def get_alpha(self, e):
+            try:
+                self.alpha = self.alpha_slider.get()
+            except:
+                self.alpha = 0.7
+    
+            self.alpha = (1 - self.alpha) * 0.02
+            self.update_image_display()
+    
     def get_selected_channel_count(self):
         '''Gets the number of channels user has selected to view in viewer'''
 
