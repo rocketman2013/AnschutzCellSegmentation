@@ -4,9 +4,9 @@ Authors & Contributors: Henry Lewinsohn
 StarDist Model Page: https://github.com/stardist/stardist
 
 ## Overview
-<ins>View and analyze medical images with pathology-specific deep learning models</ins>
+**View and analyze medical images with pathology-specific deep learning models**
 
-This project provides functionality for an image viewer and image analysis window to visualize and analyze the predictions of deep learning models on multi-channel microscopy images. Feel free to customize this code to support your specific needs, whether that be a different analysis method for your research, or adding a new type of model to app.
+This project provides the framework for an image viewer and image analysis window for you to use to visualize and analyze the predictions of your deep learning models on multi-channel microscopy images. Feel free to customize this code to support your specific needs, whether that be a different analysis method for your research, or adding a new type of model to app.
 
 
 <ins>Workflow:</ins>
@@ -17,23 +17,16 @@ This project provides functionality for an image viewer and image analysis windo
 
 
 
-Currently supported functionality:
+<ins>Currently supported functionality:</ins>
   - Train a custom segmentation model with your own images and ground truths (StarDist Model)
   - View and save your models predictions for multi-channel images
   - Total cell count in an image/channel
   - Analysis of co-localized cells in multi-channel images
 
-ToDo:
+<ins>ToDo:</ins>
   - ROI selection box for loaded images (send the selected region throught the specified model instead of the whole image)
   - Adjustable alpha widget in the image viewer (adjust the opacity of the models prediction)
   - Option to view the outline of cell predictions in order to better determine models performance for densely packed cells
-
-
-Example of the capabilities of the current app:
-This app takes in three channel flourescent images, where each channel shows the cells in a tissue slice containing a specific marker (Marker 1, Marker 2, Electropolated Channel). The goal of this app is to segment each channel, then calculate the ratio of marker 1 and marker 2 cells that co-localized with the electropolated cells *(ie. what cells in the tissue contain Marker X and are also electropolated)*. 
-
-This is done by overlapping the model output masks of eack marker channel with the output mask of the electropolated channel, and dividing the number of overlapping cells by the total number of electropolated cells.
-
 
 
 <ins>Image Viewer GUI:</ins>
@@ -45,3 +38,10 @@ This is done by overlapping the model output masks of eack marker channel with t
 <ins>Image Analysis GUI:</ins>
 
 <img width="763" alt="Screenshot 2024-07-18 at 4 37 45 PM" src="https://github.com/user-attachments/assets/f8459f68-2a18-47b1-8c74-1190bf11cdff">
+
+
+<ins>Example of the capabilities of the current app:</ins>
+
+The app takes in three channel flourescent images, where each channel shows the cells in a tissue slice containing a specific marker (Marker 1, Marker 2, Electropolated Channel). The goal of this app is to segment each channel, then calculate the ratio of marker 1 and marker 2 cells that co-localized with the electropolated cells *(ie. what cells in the tissue contain Marker X and are also electropolated)*. 
+
+This is done by overlapping the model output masks of eack marker channel with the output mask of the electropolated channel, and dividing the number of overlapping cells by the total number of electropolated cells.
