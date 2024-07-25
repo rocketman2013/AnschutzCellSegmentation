@@ -303,7 +303,7 @@ class SegmentAppGUI:
                                       orient = 'vertical'
                                       )
         self.alpha_slider.grid(row=1, column=1, sticky='ns')
-        self.alpha_slider.set(0.7)
+        self.alpha_slider.set(0.3) # See the get_alpha function for details on alpha configuration
         self.alpha_slider.bind("<ButtonRelease-1>", lambda event: self.get_alpha)
 
         # Force the canvas to update its size before displaying the image
@@ -408,11 +408,16 @@ class SegmentAppGUI:
 
     ## HELPER FUNCTIONS FOR IMAGE VIEWER---------
     def get_alpha(self, e):
+        '''Since 0 is at the top of the slider (we subtract the slider value by 1
+        to have the effect of raising the alpha when moving the slider towards 
+        the top. We also move the value in the range of 0 to 0.02 since that is what 
+        makes an effect when added on to the original image'''
+        
             try:
                 self.alpha = self.alpha_slider.get()
             except:
-                self.alpha = 0.7
-    
+                self.alpha = 0.3
+            
             self.alpha = (1 - self.alpha) * 0.02
             self.update_image_display()
     
